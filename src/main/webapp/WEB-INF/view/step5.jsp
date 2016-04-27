@@ -123,54 +123,29 @@
     </div>
     <div class="col-md-3">
       <h2>商品情報</h2>
-      <div id="guide" class="alert alert-info" style="font-size:16px;margin-bottom: 81px;">
-        商品をクリックすると<br/>その商品の情報が表示されます。
-      </div>
-      <div style="font-size:20px;">
-        <table id="coke-info" class="table table-bordered" style="display:none;">
+      <div style="font-size:16px;">
+        <table class="table table-bordered">
+          <thead>
+            <tr class="success">
+              <th width="33%">商品名</th>
+              <th width="33%">値段</th>
+              <th width="33%">在庫</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <td class="info" width="30%">値段</td>
+              <td class="coke"><span id="coke-name" >コーラ</span></td>
               <td><span id="coke-price">120</span>円</td>
-            </tr>
-            <tr>
-              <td class="info">商品名</td>
-              <td><span id="coke-name">コーラ</span></td>
-            </tr>
-            <tr>
-              <td class="info">在庫</td>
               <td><span id="coke-stock">5</span>本</td>
             </tr>
-          </tbody>
-        </table>
-        <table id="red-bull-info" class="table table-bordered" style="display:none;">
-          <tbody>
             <tr>
-              <td class="info" width="30%">値段</td>
+              <td class="red-bull"><span id="red-bull-name">レッドブル</span></td>
               <td><span id="red-bull-price">200</span>円</td>
-            </tr>
-            <tr>
-              <td class="info">商品名</td>
-              <td><span id="red-bull-name">レッドブル</span></td>
-            </tr>
-            <tr>
-              <td class="info">在庫</td>
               <td><span id="red-bull-stock">5</span>本</td>
             </tr>
-          </tbody>
-        </table>
-        <table id="water-info" class="table table-bordered" style="display:none;">
-          <tbody>
             <tr>
-              <td class="info" width="30%">値段</td>
+              <td class="water"><span id="water-name" >水</span></td>
               <td><span id="water-price">100</span>円</td>
-            </tr>
-            <tr>
-              <td class="info">商品名</td>
-              <td><span id="water-name">水</span></td>
-            </tr>
-            <tr>
-              <td class="info">在庫</td>
               <td><span id="water-stock">5</span>本</td>
             </tr>
           </tbody>
@@ -201,21 +176,18 @@ $(function(){
   var saleAmount = $('#sale-amount');
 
   // コーラ
-  var cokeInfo = $('#coke-info');
   var coke = $('#coke');
   var cokePurchase = $('#coke-purchase');
   var cokePrice = $('#coke-price');
   var cokeStock = $('#coke-stock');
 
   // レッドブル
-  var redBullInfo = $('#red-bull-info');
   var redBull = $('#red-bull');
   var redBullPurchase = $('#red-bull-purchase');
   var redBullPrice = $('#red-bull-price');
   var redBullStock = $('#red-bull-stock');
 
   // 水
-  var waterInfo = $('#water-info');
   var water = $('#water');
   var waterPurchase = $('#water-purchase');
   var waterPrice = $('#water-price');
@@ -240,16 +212,16 @@ $(function(){
       }
       if(sum >= Number(redBullPrice.text())){
         if(Number(redBullStock.text()) == 0){
-        	redBullPurchase.attr("style", "background-color:#9E9E9E");
+          redBullPurchase.attr("style", "background-color:#9E9E9E");
         } else {
-        	redBullPurchase.attr("style", "background-color:#FFA500");
+          redBullPurchase.attr("style", "background-color:#FFA500");
         }
       }
       if(sum >= Number(waterPrice.text())){
         if(Number(waterStock.text()) == 0){
-        	waterPurchase.attr("style", "background-color:#9E9E9E");
+          waterPurchase.attr("style", "background-color:#9E9E9E");
         } else {
-        	waterPurchase.attr("style", "background-color:#FFA500");
+          waterPurchase.attr("style", "background-color:#FFA500");
         }
       }
     }
@@ -264,29 +236,6 @@ $(function(){
     cokePurchase.attr("style", "background-color:#9E9E9E");
     redBullPurchase.attr("style", "background-color:#9E9E9E");
     waterPurchase.attr("style", "background-color:#9E9E9E");
-  })
-
-  // 商品の情報を表示する
-  coke.on('click', function(){
-    guide.hide();
-    redBullInfo.hide();
-    waterInfo.hide();
-
-    cokeInfo.show();
-  })
-  redBull.on('click', function(){
-    guide.hide();
-    cokeInfo.hide();
-    waterInfo.hide();
-
-    redBullInfo.show();
-  })
-  water.on('click', function(){
-    guide.hide();
-    redBullInfo.hide();
-    cokeInfo.hide();
-
-    waterInfo.show();
   })
 
   // コーラを購入した場合
@@ -370,7 +319,7 @@ $(function(){
     }
 
     if(Number(waterStock.text()) == 0){
-    	waterPurchase.attr("style", "background-color:#9E9E9E");
+      waterPurchase.attr("style", "background-color:#9E9E9E");
     }
   })
 });
