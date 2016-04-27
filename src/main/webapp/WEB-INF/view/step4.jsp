@@ -49,8 +49,13 @@
           </canvas>
         </div>
         <div style="position: absolute; top: 30px; left: 75px;">
-          <canvas id="coke" class="cursor-pointer coke" width="50" height="75" >
-          </canvas>
+          <div style="position: relative; cursor: default;">
+            <canvas id="coke" class="coke" width="50" height="75" >
+            </canvas>
+            <div style="position: absolute; top: 8px; left: 14px; font-size:14px;writing-mode: vertical-rl;">
+              コ ー ラ
+            </div>
+          </div>
         </div>
 
         <!-- 購入ボタン -->
@@ -107,28 +112,25 @@
     </div>
     <div class="col-md-3">
       <h2>商品情報</h2>
-      <div id="guide" class="alert alert-info" style="font-size:16px; margin-bottom: 81px;">
-        商品をクリックすると<br/>その商品の情報が表示されます。
-      </div>
       <div style="font-size:20px;">
-        <table id="coke-info" class="table table-bordered" style="display:none;">
+        <table class="table table-bordered">
+          <thead>
+            <tr class="info">
+              <th width="33%">商品名</th>
+              <th width="33%">値段</th>
+              <th width="33%">在庫</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <td class="info" width="30%">値段</td>
+              <td><span id="coke-name" >コーラ</span></td>
               <td><span id="coke-price">120</span>円</td>
-            </tr>
-            <tr>
-              <td class="info">商品名</td>
-              <td><span id="coke-name">コーラ</span></td>
-            </tr>
-            <tr>
-              <td class="info">在庫</td>
               <td><span id="coke-stock">5</span>本</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <h2>管理者情報</h2>
+      <h2 style="margin-top: 80px;">管理者情報</h2>
       <div style="font-size:20px;">
         <table id="coke-info" class="table table-bordered">
           <tbody>
@@ -150,7 +152,6 @@ $(function(){
   var changeMoney = $('#change-money');
   var guide = $('#guide');
   var saleAmount = $('#sale-amount');
-  var cokeInfo = $('#coke-info');
   var coke = $('#coke');
   var cokePurchase = $('#coke-purchase');
   var cokePrice = $('#coke-price');
@@ -181,12 +182,6 @@ $(function(){
     sumMoney.text(0);
     changeMoney.text(sum);
     cokePurchase.attr("style", "background-color:#9E9E9E");
-  })
-
-  coke.on('click', function(){
-    var cokeGoods = $(this);
-    guide.hide();
-    cokeInfo.show();
   })
 
   cokePurchase.on('click', function(){

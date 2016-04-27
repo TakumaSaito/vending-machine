@@ -49,16 +49,31 @@
           </canvas>
         </div>
         <div style="position: absolute; top: 30px; left: 75px;">
-          <canvas id="coke" class="cursor-pointer coke" width="50" height="75" >
-          </canvas>
+          <div style="position: relative; cursor: default;">
+            <canvas id="coke" class="coke" width="50" height="75" >
+            </canvas>
+            <div style="position: absolute; top: 8px; left: 14px; font-size:14px;writing-mode: vertical-rl;">
+              コ ー ラ
+            </div>
+          </div>
         </div>
         <div style="position: absolute; top: 30px; left: 170px;">
-          <canvas id="red-bull" width="50" height="75" class="cursor-pointer red-bull">
-          </canvas>
+          <div style="position: relative;cursor: default;" >
+            <canvas id="red-bull" width="50" height="75" class="red-bull">
+            </canvas>
+            <div style="position: absolute; top: 8px; left: 14px; font-size:14px;writing-mode: vertical-rl;">
+              レッドブル
+            </div>
+          </div>
         </div>
         <div style="position: absolute; top: 30px; left: 270px;">
-          <canvas id="water" width="50" height="75" class="cursor-pointer water">
-          </canvas>
+          <div style="position: relative; cursor: default;">
+            <canvas id="water" width="50" height="75" class="water">
+            </canvas>
+            <div style="position: absolute; top: 30px; left: 14px; font-size:14px;writing-mode: vertical-rl;">
+              水
+            </div>
+          </div>
         </div>
 
         <!-- 購入ボタン -->
@@ -126,7 +141,7 @@
       <div style="font-size:16px;">
         <table class="table table-bordered">
           <thead>
-            <tr class="success">
+            <tr class="info">
               <th width="33%">商品名</th>
               <th width="33%">値段</th>
               <th width="33%">在庫</th>
@@ -134,24 +149,24 @@
           </thead>
           <tbody>
             <tr>
-              <td class="coke"><span id="coke-name" >コーラ</span></td>
+              <td><span id="coke-name" >コーラ</span></td>
               <td><span id="coke-price">120</span>円</td>
               <td><span id="coke-stock">5</span>本</td>
             </tr>
             <tr>
-              <td class="red-bull"><span id="red-bull-name">レッドブル</span></td>
+              <td><span id="red-bull-name">レッドブル</span></td>
               <td><span id="red-bull-price">200</span>円</td>
               <td><span id="red-bull-stock">5</span>本</td>
             </tr>
             <tr>
-              <td class="water"><span id="water-name" >水</span></td>
+              <td><span id="water-name" >水</span></td>
               <td><span id="water-price">100</span>円</td>
               <td><span id="water-stock">5</span>本</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <h2>管理者情報</h2>
+      <h2 style="margin-top: 80px;">管理者情報</h2>
       <div style="font-size:20px;">
         <table id="coke-info" class="table table-bordered">
           <tbody>

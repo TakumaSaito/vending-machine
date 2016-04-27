@@ -49,8 +49,13 @@
           </canvas>
         </div>
         <div style="position: absolute; top: 30px; left: 75px;">
-          <canvas id="coke" class="cursor-pointer coke" width="50" height="75">
-          </canvas>
+          <div id="coke" style="position: relative; cursor: pointer;">
+            <canvas class="coke" width="50" height="75" >
+            </canvas>
+            <div style="position: absolute; top: 8px; left: 14px; font-size:14px;writing-mode: vertical-rl;">
+              コ ー ラ
+            </div>
+          </div>
         </div>
 
         <!-- 投入金額 -->
@@ -106,18 +111,18 @@
       </div>
       <div style="font-size:20px;">
         <table id="coke-info" class="table table-bordered" style="display:none;">
+          <thead>
+            <tr class="info">
+              <th width="33%">商品名</th>
+              <th width="33%">値段</th>
+              <th width="33%">在庫</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <td class="info" width="30%">値段</td>
-              <td>120円</td>
-            </tr>
-            <tr>
-              <td class="info">商品名</td>
-              <td>コーラ</td>
-            </tr>
-            <tr>
-              <td class="info">在庫</td>
-              <td>5本</td>
+              <td><span id="coke-name" >コーラ</span></td>
+              <td><span id="coke-price">120</span>円</td>
+              <td><span id="coke-stock">5</span>本</td>
             </tr>
           </tbody>
         </table>
