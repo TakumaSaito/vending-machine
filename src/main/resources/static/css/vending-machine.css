@@ -1,0 +1,76 @@
+.container h3 {
+  border-left: 5px solid #46b8da;
+  padding-left:7px;
+}
+.text-align-center{
+  text-align: center;
+}
+.middle{
+  vertical-align: middle;
+}
+.margin-top-40{
+  margin-top: 40px;
+}
+.margin-top-20{
+  margin-top: 20px;
+}
+.margin-left-30{
+  margin-left: 30px;
+}
+.border-bottom-accent{
+  border-bottom: 5px solid #4D5F8A;
+}
+.section{
+  padding: 10px;
+  font-size: 20px;
+}
+
+.white{
+  color:#FFFFFF;
+}
+.red{
+  color:#FF0000;
+}
+.right-blue{
+  color: #2EAFE2;
+}
+.dark-blue{
+  color:#337AB7;
+}
+.text-decoration-none{
+  text-decoration: none;
+}
+.non-hover:hover{
+  color:#FFFFFF;
+  text-decoration: none;
+}
+.purchase-button{
+  background-color:#FFA500;
+  -moz-border-radius: 100px / 50px;
+  -webkit-border-radius: 100px / 50px;
+  border-radius: 100px / 50px;
+  width: 50px;
+  height: 20px;
+  cursor:pointer;
+}
+.return-button{
+  background-color:#FFA500;
+  -moz-border-radius: 100px / 50px;
+  -webkit-border-radius: 100px / 50px;
+  border-radius: 100px / 50px;
+  width: 100px;
+  height: 50px;
+  cursor:pointer;
+}
+.coke{
+  background-color: rgba(255, 0, 0, 0.72);
+}
+.red-bull{
+  background-color: rgba(0, 67, 255, 0.62);
+}
+.water{
+  background-color: rgba(0, 137, 255, 0.25)
+}
+.cursor-pointer{
+  cursor:pointer;
+}
