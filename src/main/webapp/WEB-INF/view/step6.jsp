@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>自動販売機ステップ４</title>
+<title>自動販売機ステップ６</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="css/vending-machine.css" rel="stylesheet">
@@ -52,10 +52,26 @@
           <canvas id="coke" class="cursor-pointer coke" width="50" height="75" >
           </canvas>
         </div>
+        <div style="position: absolute; top: 30px; left: 170px;">
+          <canvas id="red-bull" width="50" height="75" class="cursor-pointer red-bull">
+          </canvas>
+        </div>
+        <div style="position: absolute; top: 30px; left: 270px;">
+          <canvas id="water" width="50" height="75" class="cursor-pointer water">
+          </canvas>
+        </div>
 
         <!-- 購入ボタン -->
         <div style="position: absolute; top: 135px; left: 75px;">
           <canvas id="coke-purchase"  class="purchase-button" style="background-color: #9E9E9E;">
+          </canvas>
+        </div>
+        <div style="position: absolute; top: 135px; left: 170px;">
+          <canvas id="red-bull-purchase"  class="purchase-button" style="background-color: #9E9E9E;">
+          </canvas>
+        </div>
+        <div style="position: absolute; top: 135px; left: 270px;">
+          <canvas id="water-purchase" class="purchase-button" style="background-color: #9E9E9E;">
           </canvas>
         </div>
 
@@ -107,7 +123,7 @@
     </div>
     <div class="col-md-3">
       <h2>商品情報</h2>
-      <div id="guide" class="alert alert-info" style="font-size:16px; margin-bottom: 81px;">
+      <div id="guide" class="alert alert-info" style="font-size:16px;margin-bottom: 81px;">
         商品をクリックすると<br/>その商品の情報が表示されます。
       </div>
       <div style="font-size:20px;">
@@ -127,6 +143,38 @@
             </tr>
           </tbody>
         </table>
+        <table id="red-bull-info" class="table table-bordered" style="display:none;">
+          <tbody>
+            <tr>
+              <td class="info" width="30%">値段</td>
+              <td><span id="red-bull-price">200</span>円</td>
+            </tr>
+            <tr>
+              <td class="info">商品名</td>
+              <td><span id="red-bull-name">レッドブル</span></td>
+            </tr>
+            <tr>
+              <td class="info">在庫</td>
+              <td><span id="red-bull-stock">5</span>本</td>
+            </tr>
+          </tbody>
+        </table>
+        <table id="water-info" class="table table-bordered" style="display:none;">
+          <tbody>
+            <tr>
+              <td class="info" width="30%">値段</td>
+              <td><span id="water-price">100</span>円</td>
+            </tr>
+            <tr>
+              <td class="info">商品名</td>
+              <td><span id="water-name">水</span></td>
+            </tr>
+            <tr>
+              <td class="info">在庫</td>
+              <td><span id="water-stock">5</span>本</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <h2>管理者情報</h2>
       <div style="font-size:20px;">
@@ -139,6 +187,7 @@
           </tbody>
         </table>
       </div>
+    </div>
   </div>
 </div>
 </body>
@@ -150,12 +199,29 @@ $(function(){
   var changeMoney = $('#change-money');
   var guide = $('#guide');
   var saleAmount = $('#sale-amount');
+
+  // コーラ
   var cokeInfo = $('#coke-info');
   var coke = $('#coke');
   var cokePurchase = $('#coke-purchase');
   var cokePrice = $('#coke-price');
   var cokeStock = $('#coke-stock');
 
+  // レッドブル
+  var redBullInfo = $('#red-bull-info');
+  var redBull = $('#red-bull');
+  var redBullPurchase = $('#red-bull-purchase');
+  var redBullPrice = $('#red-bull-price');
+  var redBullStock = $('#red-bull-stock');
+
+  // 水
+  var waterInfo = $('#water-info');
+  var water = $('#water');
+  var waterPurchase = $('#water-purchase');
+  var waterPrice = $('#water-price');
+  var waterStock = $('#water-stock');
+
+  // お金を選択した場合
   moneyList.on('click', 'li', function(){
     var li = $(this);
     var money = li.data('money');
@@ -172,23 +238,58 @@ $(function(){
           cokePurchase.attr("style", "background-color:#FFA500");
         }
       }
+      if(sum >= Number(redBullPrice.text())){
+        if(Number(redBullStock.text()) == 0){
+        	redBullPurchase.attr("style", "background-color:#9E9E9E");
+        } else {
+        	redBullPurchase.attr("style", "background-color:#FFA500");
+        }
+      }
+      if(sum >= Number(waterPrice.text())){
+        if(Number(waterStock.text()) == 0){
+        	waterPurchase.attr("style", "background-color:#9E9E9E");
+        } else {
+        	waterPurchase.attr("style", "background-color:#FFA500");
+        }
+      }
     }
   });
 
+  // 払い戻しをした場合
   returnButton.on('click', function(){
     var button = $(this);
     var sum = sumMoney.text();
     sumMoney.text(0);
     changeMoney.text(sum);
     cokePurchase.attr("style", "background-color:#9E9E9E");
+    redBullPurchase.attr("style", "background-color:#9E9E9E");
+    waterPurchase.attr("style", "background-color:#9E9E9E");
   })
 
+  // 商品の情報を表示する
   coke.on('click', function(){
-    var cokeGoods = $(this);
     guide.hide();
+    redBullInfo.hide();
+    waterInfo.hide();
+
     cokeInfo.show();
   })
+  redBull.on('click', function(){
+    guide.hide();
+    cokeInfo.hide();
+    waterInfo.hide();
 
+    redBullInfo.show();
+  })
+  water.on('click', function(){
+    guide.hide();
+    redBullInfo.hide();
+    cokeInfo.hide();
+
+    waterInfo.show();
+  })
+
+  // コーラを購入した場合
   cokePurchase.on('click', function(){
     var button = $(this);
     var insertMoney = Number(sumMoney.text());
@@ -199,16 +300,54 @@ $(function(){
     if(price > insertMoney || stock <= 0){
       return;
     }
-    sumMoney.text(insertMoney - price);
+    sumMoney.text(0);
+    changeMoney.text(insertMoney - price);
     saleAmount.text(sale + price);
     cokeStock.text(stock - 1);
-    // TODO バグを埋め込めそう（境界値）
-    if(Number(sumMoney.text()) < Number(cokePrice.text())){
-      cokePurchase.attr("style", "background-color:#9E9E9E");
+
+    cokePurchase.attr("style", "background-color:#9E9E9E");
+    redBullPurchase.attr("style", "background-color:#9E9E9E");
+    waterPurchase.attr("style", "background-color:#9E9E9E");
+  })
+  // レッドブルを購入した場合
+  redBullPurchase.on('click', function(){
+    var button = $(this);
+    var insertMoney = Number(sumMoney.text());
+    var price = Number(redBullPrice.text());
+    var stock = Number(redBullStock.text());
+    var sale = Number(saleAmount.text());
+
+    if(price > insertMoney || stock <= 0){
+      return;
     }
-    if(Number(cokeStock.text()) == 0){
-      cokePurchase.attr("style", "background-color:#9E9E9E");
+    sumMoney.text(0);
+    changeMoney.text(insertMoney - price);
+    saleAmount.text(sale + price);
+    redBullStock.text(stock - 1);
+
+    cokePurchase.attr("style", "background-color:#9E9E9E");
+    redBullPurchase.attr("style", "background-color:#9E9E9E");
+    waterPurchase.attr("style", "background-color:#9E9E9E");
+  })
+  // 水を購入した場合
+  waterPurchase.on('click', function(){
+    var button = $(this);
+    var insertMoney = Number(sumMoney.text());
+    var price = Number(waterPrice.text());
+    var stock = Number(waterStock.text());
+    var sale = Number(saleAmount.text());
+
+    if(price > insertMoney || stock <= 0){
+      return;
     }
+    sumMoney.text(0);
+    changeMoney.text(insertMoney - price);
+    saleAmount.text(sale + price);
+    waterStock.text(stock - 1);
+
+    cokePurchase.attr("style", "background-color:#9E9E9E");
+    redBullPurchase.attr("style", "background-color:#9E9E9E");
+    waterPurchase.attr("style", "background-color:#9E9E9E");
   })
 });
 </script>

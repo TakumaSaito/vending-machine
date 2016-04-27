@@ -34,6 +34,7 @@ public class VendingMachineController {
     @RequestMapping("/step1")
     public ModelAndView step1() {
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("step", "ステップ１");
         modelAndView.setViewName("step1");
 
         return modelAndView;
@@ -47,6 +48,7 @@ public class VendingMachineController {
     @RequestMapping("/step2")
     public ModelAndView step2() {
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("step", "ステップ２");
         modelAndView.setViewName("step2");
 
         return modelAndView;
@@ -60,6 +62,7 @@ public class VendingMachineController {
     @RequestMapping("/step3")
     public ModelAndView step3() {
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("step", "ステップ３");
         modelAndView.setViewName("step3");
 
         return modelAndView;
@@ -73,6 +76,7 @@ public class VendingMachineController {
     @RequestMapping("/step4")
     public ModelAndView step4() {
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("step", "ステップ４");
         modelAndView.setViewName("step4");
 
         return modelAndView;
@@ -86,6 +90,7 @@ public class VendingMachineController {
     @RequestMapping("/step5")
     public ModelAndView step5() {
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("step", "ステップ５");
         modelAndView.setViewName("step5");
 
         return modelAndView;
@@ -99,7 +104,36 @@ public class VendingMachineController {
     @RequestMapping("/step6")
     public ModelAndView step6() {
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("step", "ステップ６");
         modelAndView.setViewName("step6");
+
+        return modelAndView;
+    }
+
+    /**
+     * ステップ７画面へ遷移する。
+     *
+     * @return ModelAndView
+     */
+    @RequestMapping("/step7")
+    public ModelAndView step7() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("step", "ステップ７");
+        modelAndView.setViewName("step7");
+
+        return modelAndView;
+    }
+
+    /**
+     * ステップ８画面へ遷移する。
+     *
+     * @return ModelAndView
+     */
+    @RequestMapping("/step8")
+    public ModelAndView step8() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("step", "ステップ８");
+        modelAndView.setViewName("step8");
 
         return modelAndView;
     }
