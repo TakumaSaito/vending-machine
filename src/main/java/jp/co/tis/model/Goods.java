@@ -1,15 +1,15 @@
 package jp.co.tis.model;
 
 /**
- * テストケース用サンプルコード
+ * 商品の情報を保持するクラス。
  *
- * @author Fujiwara Chie
+ * @author Saito Takuma
  * @since 1.0
  */
 public class Goods {
 
     /** 商品名 */
-    private String name;
+    private String goodsName;
 
     /** 値段 */
     private int price;
@@ -18,71 +18,57 @@ public class Goods {
     private int stock;
 
     /**
-     * 商品名のgetter。
+     * 商品名を取得する。
      *
      * @return 商品名
      */
-    public String getName() {
-        return name;
+    public String getGoodsName() {
+        return goodsName;
     }
 
     /**
-     * 商品名のsetter。
+     * 商品名を設定する。
      *
-     * @param name セットする商品名
+     * @param goodsName 商品名
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName;
     }
 
     /**
-     * 値段のgetter。
+     * 値段を取得する。
      *
-     * @return 商品名
+     * @return 値段
      */
     public int getPrice() {
         return price;
     }
 
     /**
-     * 値段のsetter。
+     * 値段を設定する。
      *
-     * @param price セットする値段
+     * @param price 値段
      */
     public void setPrice(int price) {
         this.price = price;
     }
 
     /**
-     * 在庫のgetter。
+     * 在庫を取得する。
      *
-     * @return 商品名
+     * @return 在庫
      */
     public int getStock() {
         return stock;
     }
 
     /**
-     * 在庫のsetter。
+     * 在庫を設定する。
      *
-     * @param stock セットする在庫
+     * @param stock 在庫
      */
     public void setStock(int stock) {
         this.stock = stock;
-    }
-
-    /**
-     * 購入可能かの判定。
-     *
-     * @param amount 投入金額
-     * @return 購入可否
-     */
-    public boolean canPurchase(int amount) {
-        if (stock > 0 && amount >= price) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
 }
