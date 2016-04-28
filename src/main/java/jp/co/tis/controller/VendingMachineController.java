@@ -109,18 +109,4 @@ public class VendingMachineController {
 
         return modelAndView;
     }
-
-    /**
-     * ステップ７画面へ遷移する。
-     *
-     * @return ModelAndView
-     */
-    @RequestMapping("/step7")
-    public ModelAndView step7() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("step", "ステップ７");
-        modelAndView.setViewName("step7");
-
-        return modelAndView;
-    }
 }

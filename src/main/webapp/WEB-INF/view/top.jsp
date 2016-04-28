@@ -68,17 +68,6 @@
     </div>
     <div class="col-md-2"></div>
   </div>
-
-  <div class="row margin-top-40">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <h2>ステップ７</h2>
-      <a class="btn btn-default btn-block btn-danger section" href="/step7">
-        <i class="fa fa-th-list"></i>　釣り銭ストックの導入
-      </a>
-    </div>
-    <div class="col-md-2"></div>
-  </div>
 </div>
 </body>
 </html>
