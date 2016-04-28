@@ -19,8 +19,8 @@
 
 <div class="container">
   <div class="row margin-top-40">
-    <div class="col-xs-1"></div>
-    <div class="col-xs-2">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
       <h2>お金</h2>
       <ul id="moneyList" class="list-group cursor-pointer" style="font-size:20px;">
         <li class="list-group-item gray" data-money="1">1円</li>
@@ -35,8 +35,8 @@
         <li class="list-group-item gray" data-money="10000">10000円</li>
       </ul>
     </div>
-    <div class="col-xs-1"></div>
-    <div class="col-xs-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
       <h2>自動販売機</h2>
       <div style="position: relative;">
         <!-- 購入ボタン -->
@@ -136,7 +136,7 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-3">
+    <div class="col-md-3">
       <h2>商品情報</h2>
       <div style="font-size:16px;">
         <table class="table table-bordered">

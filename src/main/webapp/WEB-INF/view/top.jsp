@@ -19,54 +19,54 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
       <h2>ステップ１</h2>
       <a class="btn btn-default btn-block btn-info section" href="/step1">
         <i class="fa fa-jpy"></i>　お金の投入と払い戻し
       </a>
     </div>
-    <div class="col-xs-4">
+    <div class="col-md-4">
       <h2>ステップ２</h2>
       <a class="btn btn-default btn-block btn-info section" href="/step2">
         <i class="fa fa-money"></i>　扱えないお金
       </a>
     </div>
-    <div class="col-xs-2"></div>
+    <div class="col-md-2"></div>
   </div>
 
   <div class="row margin-top-40">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
       <h2>ステップ３</h2>
       <a class="btn btn-default btn-block btn-success section" href="/step3">
         <i class="fa fa-database"></i>　ジュースの管理
       </a>
     </div>
-    <div class="col-xs-4">
+    <div class="col-md-4">
       <h2>ステップ４</h2>
       <a class="btn btn-default btn-block btn-success section" href="/step4">
         <i class="fa fa-hand-o-right"></i>　購入
       </a>
     </div>
-    <div class="col-xs-2"></div>
+    <div class="col-md-2"></div>
   </div>
 
   <div class="row margin-top-40">
-    <div class="col-xs-2"></div>
-    <div class="col-xs-4">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
       <h2>ステップ５</h2>
       <a class="btn btn-default btn-block btn-warning section" href="/step5">
         <i class="fa fa-wrench"></i>　機能拡張
       </a>
     </div>
-    <div class="col-xs-4">
+    <div class="col-md-4">
       <h2>ステップ６</h2>
       <a class="btn btn-default btn-block btn-warning section" href="/step6">
         <i class="fa fa-line-chart"></i>　釣り銭と売り上げ管理
       </a>
     </div>
-    <div class="col-xs-2"></div>
+    <div class="col-md-2"></div>
   </div>
 </div>
 </body>
