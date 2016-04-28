@@ -165,6 +165,7 @@ $(function(){
     } else {
       var sum = Number(sumMoney.text()) + Number(money);
       sumMoney.text(sum);
+      changeMoney.text(0);
 
       if(sum >= Number(cokePrice.text())){
         if(Number(cokeStock.text()) == 0){

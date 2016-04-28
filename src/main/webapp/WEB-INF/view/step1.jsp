@@ -107,6 +107,7 @@ $(function(){
     var money = li.data('money');
     var sum = Number(sumMoney.text()) + Number(money);
     sumMoney.text(sum);
+    changeMoney.text(0);
   });
 
   returnButton.on('click', function(){
