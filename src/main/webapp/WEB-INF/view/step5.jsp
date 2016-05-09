@@ -124,7 +124,7 @@
               お釣り
             </div>
             <div style="position: absolute; top: 40px; left: 5px; font-size:20px;">
-              ￥ <span id="change-money" >0</span>
+              ￥ <span id="change-money" ></span>
             </div>
           </div>
         </div>
@@ -191,19 +191,16 @@ $(function(){
   var saleAmount = $('#sale-amount');
 
   // コーラ
-  var coke = $('#coke');
   var cokePurchase = $('#coke-purchase');
   var cokePrice = $('#coke-price');
   var cokeStock = $('#coke-stock');
 
   // レッドブル
-  var redBull = $('#red-bull');
   var redBullPurchase = $('#red-bull-purchase');
   var redBullPrice = $('#red-bull-price');
   var redBullStock = $('#red-bull-stock');
 
   // 水
-  var water = $('#water');
   var waterPurchase = $('#water-purchase');
   var waterPrice = $('#water-price');
   var waterStock = $('#water-stock');
@@ -217,7 +214,7 @@ $(function(){
     } else {
       var sum = Number(sumMoney.text()) + Number(money);
       sumMoney.text(sum);
-      changeMoney.text(0);
+      changeMoney.text('');
 
       if(sum >= Number(cokePrice.text())){
         if(Number(cokeStock.text()) == 0){

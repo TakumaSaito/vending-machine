@@ -83,7 +83,7 @@
               お釣り
             </div>
             <div style="position: absolute; top: 40px; left: 5px; font-size:20px;">
-              ￥ <span id="change-money" >0</span>
+              ￥ <span id="change-money" ></span>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ $(function(){
     } else {
       var sum = Number(sumMoney.text()) + Number(money);
       sumMoney.text(sum);
-      changeMoney.text(0);
+      changeMoney.text('');
     }
   });
 
