@@ -48,14 +48,8 @@
           <canvas id="goods-display" width="300" height="100" style="background-color:white;">
           </canvas>
         </div>
-        <div style="position: absolute; top: 30px; left: 75px;">
-          <div style="position: relative; cursor: default;">
-            <canvas id="coke" class="coke" width="50" height="75" >
-            </canvas>
-            <div style="position: absolute; top: 8px; left: 14px; font-size:14px;writing-mode: vertical-rl;">
-              コ ー ラ
-            </div>
-          </div>
+        <div style="position: absolute; top: 27px; left: 85px;">
+          <img src="img/cola.bmp" width="30%">
         </div>
 
         <!-- 購入ボタン -->
