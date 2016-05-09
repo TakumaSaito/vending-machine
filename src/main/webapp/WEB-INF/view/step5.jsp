@@ -22,18 +22,30 @@
     <div class="col-md-1"></div>
     <div class="col-md-2">
       <h2>お金</h2>
-      <ul id="moneyList" class="list-group cursor-pointer" style="font-size:20px;">
-        <li class="list-group-item gray" data-money="1">1円</li>
-        <li class="list-group-item gray" data-money="5">5円</li>
-        <li class="list-group-item" data-money="10">10円</li>
-        <li class="list-group-item" data-money="50">50円</li>
-        <li class="list-group-item" data-money="100">100円</li>
-        <li class="list-group-item" data-money="500">500円</li>
-        <li class="list-group-item" data-money="1000">1000円</li>
-        <li class="list-group-item gray" data-money="2000">2000円</li>
-        <li class="list-group-item gray" data-money="5000">5000円</li>
-        <li class="list-group-item gray" data-money="10000">10000円</li>
-      </ul>
+      <div id="moneyList" class="cursor-pointer">
+        <div class="margin-top-15" style="width:160px;">
+          <span data-money="1"><img src="img/money_1.png" width="50"></span>
+          <span data-money="5"><img src="img/money_5.png" width="50"></span>
+          <span data-money="10"><img src="img/money_10.png" width="50"></span>
+        </div>
+        <div class="margin-top-15" style="width:160px;">
+          <span data-money="50"><img src="img/money_50.png" width="50"></span>
+          <span data-money="100"><img src="img/money_100.png" width="50"></span>
+          <span data-money="500"><img src="img/money_500.png" width="50"></span>
+        </div>
+        <div class="margin-top-15">
+          <span data-money="1000"><img src="img/money_1000.png" width="165" height="77.5"></span>
+        </div>
+        <div class="margin-top-15">
+          <span data-money="2000"><img src="img/money_2000.png" width="165" height="77.5"></span>
+        </div>
+        <div class="margin-top-15">
+          <span data-money="5000"><img src="img/money_5000.png" width="165" height="77.5"></span>
+        </div>
+        <div class="margin-top-15">
+          <span data-money="10000"><img src="img/money_10000.png" width="165" height="77.5"></span>
+        </div>
+      </div>
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-5">
@@ -49,13 +61,13 @@
           </canvas>
         </div>
         <div style="position: absolute; top: 27px; left: 85px;">
-          <img src="img/cola.bmp" width="30%">
+          <img src="img/cola.bmp" width="30" height="88">
         </div>
         <div style="position: absolute; top: 30px; left: 175px;">
-          <img src="img/redbull.bmp" width="18%">
+          <img src="img/redbull.bmp" width="42.5" height="78">
         </div>
         <div style="position: absolute; top: 30px; left: 275px;">
-          <img src="img/water.png" width="20%">
+          <img src="img/water.png" width="36.5" height="82">
         </div>
 
         <!-- 購入ボタン -->
@@ -188,9 +200,9 @@ $(function(){
   var waterStock = $('#water-stock');
 
   // お金を選択した場合
-  moneyList.on('click', 'li', function(){
-    var li = $(this);
-    var money = li.data('money');
+  moneyList.on('click', 'span', function(){
+    var span = $(this);
+    var money = span.data('money');
     if(money == 1 || money == 5 || money == 2000 || money == 5000 || money == 10000){
       changeMoney.text(money);
     } else {
