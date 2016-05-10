@@ -18,6 +18,29 @@ public class Goods {
     private int stock;
 
     /**
+     * デフォルトコンストラクタ。
+     */
+    public Goods() {
+        setGoodsName("");
+        setPrice(0);
+        setStock(0);
+    }
+
+    /**
+     * コンストラクタ。
+     *
+     * @param goodsName 商品名
+     * @param price 値段
+     * @param stock 在庫
+     *
+     */
+    public Goods(String goodsName, int price, int stock) {
+        setGoodsName(goodsName);
+        setPrice(price);
+        setStock(stock);
+    }
+
+    /**
      * 商品名を取得する。
      *
      * @return 商品名

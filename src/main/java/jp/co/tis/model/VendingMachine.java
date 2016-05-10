@@ -1,5 +1,6 @@
 package jp.co.tis.model;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -22,6 +23,18 @@ public class VendingMachine {
     /** 商品情報Map（key : 商品名 value : 商品情報 ） */
     private Map<String, Goods> goodsInfoMap;
 
+    /** 釣り銭（10円）のストック */
+    private int coin10Stock;
+
+    /** 釣り銭（50円）のストック */
+    private int coin50Stock;
+
+    /** 釣り銭（100円）のストック */
+    private int coin100Stock;
+
+    /** 釣り銭（500円）のストック */
+    private int coin500Stock;
+
     /**
      * コンストラクタ。
      */
@@ -29,6 +42,11 @@ public class VendingMachine {
         setInsertMoney(0);
         setChangeMoney(0);
         setSaleAmount(0);
+        setGoodsInfoMap(new HashMap<String, Goods>());
+        setCoin10Stock(0);
+        setCoin50Stock(0);
+        setCoin100Stock(0);
+        setCoin500Stock(0);
     }
 
     /**
@@ -101,6 +119,78 @@ public class VendingMachine {
      */
     public void setGoodsInfoMap(Map<String, Goods> goodsInfoMap) {
         this.goodsInfoMap = goodsInfoMap;
+    }
+
+    /**
+     * 釣り銭（10円）のストックを取得する。
+     *
+     * @return 釣り銭（10円）のストック
+     */
+    public int getCoin10Stock() {
+        return coin10Stock;
+    }
+
+    /**
+     * 釣り銭（10円）のストックを設定する。
+     *
+     * @param coin10Stock 釣り銭（10円）のストック
+     */
+    public void setCoin10Stock(int coin10Stock) {
+        this.coin10Stock = coin10Stock;
+    }
+
+    /**
+     * 釣り銭（50円）のストックを取得する。
+     *
+     * @return 釣り銭（50円）のストック
+     */
+    public int getCoin50Stock() {
+        return coin50Stock;
+    }
+
+    /**
+     * 釣り銭（50円）のストックを設定する。
+     *
+     * @param coin50Stock 釣り銭（50円）のストック
+     */
+    public void setCoin50Stock(int coin50Stock) {
+        this.coin50Stock = coin50Stock;
+    }
+
+    /**
+     * 釣り銭（100円）のストックを取得する。
+     *
+     * @return 釣り銭（100円）のストック
+     */
+    public int getCoin100Stock() {
+        return coin100Stock;
+    }
+
+    /**
+     * 釣り銭（100円）のストックを設定する。
+     *
+     * @param coin100Stock 釣り銭（100円）のストック
+     */
+    public void setCoin100Stock(int coin100Stock) {
+        this.coin100Stock = coin100Stock;
+    }
+
+    /**
+     * 釣り銭（500円）のストックを取得する。
+     *
+     * @return 釣り銭（500円）のストック
+     */
+    public int getCoin500Stock() {
+        return coin500Stock;
+    }
+
+    /**
+     * 釣り銭（500円）のストックを設定する。
+     *
+     * @param coin500Stock 釣り銭（500円）のストック
+     */
+    public void setCoin500Stock(int coin500Stock) {
+        this.coin500Stock = coin500Stock;
     }
 
 }
