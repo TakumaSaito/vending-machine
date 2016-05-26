@@ -137,10 +137,10 @@ public class VendingMachineLogicTest {
     public void testGetPurchasableGoodsList() {
         Map<String, Goods> goodsInfoMap = new LinkedHashMap<String, Goods>();
         Goods coke = new Goods("コーラ", 120, 5);
-        Goods redBull = new Goods("レッドブル", 200, 5);
+        Goods energyDrink = new Goods("エナジードリンク", 200, 5);
         Goods water = new Goods("水", 100, 0);
         goodsInfoMap.put(coke.getGoodsName(), coke);
-        goodsInfoMap.put(redBull.getGoodsName(), redBull);
+        goodsInfoMap.put(energyDrink.getGoodsName(), energyDrink);
         goodsInfoMap.put(water.getGoodsName(), water);
 
         VendingMachine vendingMachine = new VendingMachine();
@@ -149,7 +149,7 @@ public class VendingMachineLogicTest {
         List<Goods> purchasableGoodsList = target.getPurchasableGoodsList(vendingMachine);
         assertThat(purchasableGoodsList.size(), is(2));
         assertThat(purchasableGoodsList.get(0).getGoodsName(), is("コーラ"));
-        assertThat(purchasableGoodsList.get(1).getGoodsName(), is("レッドブル"));
+        assertThat(purchasableGoodsList.get(1).getGoodsName(), is("エナジードリンク"));
     }
 
     /**
