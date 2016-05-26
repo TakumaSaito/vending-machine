@@ -61,7 +61,7 @@
           </canvas>
         </div>
         <div style="position: absolute; top: 30px; left: 68px;">
-          <img src="img/can_cola.png" height="82">
+          <span id="coke" style="cursor: pointer;"><img src="img/can_cola.png" height="82"></span>
         </div>
 
         <!-- 投入金額 -->
