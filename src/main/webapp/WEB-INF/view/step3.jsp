@@ -60,8 +60,8 @@
           <canvas id="goods-display" width="300" height="100" style="background-color:white;">
           </canvas>
         </div>
-        <div style="position: absolute; top: 27px; left: 85px;">
-          <span id="coke" style="cursor: pointer;"><img src="img/cola.bmp" width="30%"></span>
+        <div style="position: absolute; top: 30px; left: 68px;">
+          <span id="coke" style="cursor: pointer;"><img src="img/can_cola.png" height="82"></span>
         </div>
 
         <!-- 投入金額 -->

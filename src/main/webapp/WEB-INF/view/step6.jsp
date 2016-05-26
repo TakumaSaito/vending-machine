@@ -60,14 +60,14 @@
           <canvas id="goods-display" width="300" height="100" style="background-color:white;">
           </canvas>
         </div>
-        <div style="position: absolute; top: 27px; left: 85px;">
-          <img src="img/cola.bmp" width="30%">
+        <div style="position: absolute; top: 30px; left: 68px;">
+          <img src="img/can_cola.png" height="82">
         </div>
-        <div style="position: absolute; top: 30px; left: 175px;">
-          <img src="img/redbull.bmp" width="42.5" height="78">
+        <div style="position: absolute; top: 30px; left: 161px;">
+          <img src="img/drink_energy.png" height="82">
         </div>
-        <div style="position: absolute; top: 30px; left: 275px;">
-          <img src="img/water.png" width="36.5" height="82">
+        <div style="position: absolute; top: 30px; left: 277px;">
+          <img src="img/water.png" height="82">
         </div>
 
         <!-- 購入ボタン -->
@@ -76,7 +76,7 @@
           </canvas>
         </div>
         <div style="position: absolute; top: 135px; left: 170px;">
-          <canvas id="red-bull-purchase"  class="purchase-button" style="background-color: #9E9E9E;">
+          <canvas id="energy-drink-purchase"  class="purchase-button" style="background-color: #9E9E9E;">
           </canvas>
         </div>
         <div style="position: absolute; top: 135px; left: 270px;">
@@ -148,9 +148,9 @@
               <td><span id="coke-stock">5</span>本</td>
             </tr>
             <tr>
-              <td><span id="red-bull-name">レッドブル</span></td>
-              <td><span id="red-bull-price">200</span>円</td>
-              <td><span id="red-bull-stock">5</span>本</td>
+              <td><span id="energy-drink-name">エナジードリンク</span></td>
+              <td><span id="energy-drink-price">200</span>円</td>
+              <td><span id="energy-drink-stock">5</span>本</td>
             </tr>
             <tr>
               <td><span id="water-name" >水</span></td>
@@ -189,10 +189,10 @@ $(function(){
   var cokePrice = $('#coke-price');
   var cokeStock = $('#coke-stock');
 
-  // レッドブル
-  var redBullPurchase = $('#red-bull-purchase');
-  var redBullPrice = $('#red-bull-price');
-  var redBullStock = $('#red-bull-stock');
+  // エナジードリンク
+  var energyDrinkPurchase = $('#energy-drink-purchase');
+  var energyDrinkPrice = $('#energy-drink-price');
+  var energyDrinkStock = $('#energy-drink-stock');
 
   // 水
   var waterPurchase = $('#water-purchase');
@@ -217,11 +217,11 @@ $(function(){
           cokePurchase.attr("style", "background-color:#FFA500");
         }
       }
-      if(sum >= Number(redBullPrice.text())){
-        if(Number(redBullStock.text()) == 0){
-        	redBullPurchase.attr("style", "background-color:#9E9E9E");
+      if(sum >= Number(energyDrinkPrice.text())){
+        if(Number(energyDrinkStock.text()) == 0){
+        	energyDrinkPurchase.attr("style", "background-color:#9E9E9E");
         } else {
-        	redBullPurchase.attr("style", "background-color:#FFA500");
+        	energyDrinkPurchase.attr("style", "background-color:#FFA500");
         }
       }
       if(sum >= Number(waterPrice.text())){
@@ -241,7 +241,7 @@ $(function(){
     sumMoney.text(0);
     changeMoney.text(sum);
     cokePurchase.attr("style", "background-color:#9E9E9E");
-    redBullPurchase.attr("style", "background-color:#9E9E9E");
+    energyDrinkPurchase.attr("style", "background-color:#9E9E9E");
     waterPurchase.attr("style", "background-color:#9E9E9E");
   })
 
@@ -262,15 +262,15 @@ $(function(){
     cokeStock.text(stock - 1);
 
     cokePurchase.attr("style", "background-color:#9E9E9E");
-    redBullPurchase.attr("style", "background-color:#9E9E9E");
+    energyDrinkPurchase.attr("style", "background-color:#9E9E9E");
     waterPurchase.attr("style", "background-color:#9E9E9E");
   })
-  // レッドブルを購入した場合
-  redBullPurchase.on('click', function(){
+  // エナジードリンクを購入した場合
+  energyDrinkPurchase.on('click', function(){
     var button = $(this);
     var insertMoney = Number(sumMoney.text());
-    var price = Number(redBullPrice.text());
-    var stock = Number(redBullStock.text());
+    var price = Number(energyDrinkPrice.text());
+    var stock = Number(energyDrinkStock.text());
     var sale = Number(saleAmount.text());
 
     if(price > insertMoney || stock <= 0){
@@ -279,10 +279,10 @@ $(function(){
     sumMoney.text(0);
     changeMoney.text(insertMoney - price);
     saleAmount.text(sale + price);
-    redBullStock.text(stock - 1);
+    energyDrinkStock.text(stock - 1);
 
     cokePurchase.attr("style", "background-color:#9E9E9E");
-    redBullPurchase.attr("style", "background-color:#9E9E9E");
+    energyDrinkPurchase.attr("style", "background-color:#9E9E9E");
     waterPurchase.attr("style", "background-color:#9E9E9E");
   })
   // 水を購入した場合
@@ -302,7 +302,7 @@ $(function(){
     waterStock.text(stock - 1);
 
     cokePurchase.attr("style", "background-color:#9E9E9E");
-    redBullPurchase.attr("style", "background-color:#9E9E9E");
+    energyDrinkPurchase.attr("style", "background-color:#9E9E9E");
     waterPurchase.attr("style", "background-color:#9E9E9E");
   })
 });
